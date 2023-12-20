@@ -8,9 +8,9 @@ class Category extends AbstractModel
 {
     private int $id;
     private string $name;
-    protected string $image = ':image';
+    private string $image;
     protected string $table = 'categories';
-    protected string $fields = 'name';
+    protected string $fields = 'name, imageoco';
     protected string $values = ':name, :image';
     protected array $valuesBinded = [
         ':name' => '',
