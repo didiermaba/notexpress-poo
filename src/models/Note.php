@@ -6,84 +6,37 @@ use models\AbstractModel;
 
 class Note extends AbstractModel
 {
-    private int $id;
     private string $title;
     private string $content;
-    private int $user_id;
+    private string $slug;
     protected string $table = 'notes';
-    protected string $fields = 'title, content, user_id';
-    protected string $values = ':title, :content, :user_id';
+    protected string $fields = 'title, slug, content';
+    protected string $values = ':title, :slug, :content';
     protected array $valuesBinded = [
         ':title' => '',
-        ':content' => '',
-        ':user_id' => ''
+        ':slug' => '',
+        ':content' => ''
     ];
 
-    /**
-     * Get the value of id
-     */ 
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Get the value of title
-     */ 
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * Set the value of title
-     *
-     * @return  self
-     */ 
-    public function setTitle($title)
+    public function setTitle($title): Note
     {
         $this->title = $title;
-
         return $this;
     }
 
-    /**
-     * Get the value of content
-     */ 
-    public function getContent()
+    public function getContent(): string
     {
         return $this->content;
     }
 
-    /**
-     * Set the value of content
-     *
-     * @return  self
-     */ 
-    public function setContent($content)
+    public function setContent($content): Note
     {
         $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of user_id
-     */ 
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * Set the value of user_id
-     *
-     * @return  self
-     */ 
-    public function setUserId($user_id)
-    {
-        $this->user_id = $user_id;
-
         return $this;
     }
 
@@ -96,8 +49,8 @@ class Note extends AbstractModel
     public function bindValues(): void
     {
         $this->valuesBinded[':title'] = $this->title;
+        $this->valuesBinded[':slug'] = $this->slug;
         $this->valuesBinded[':content'] = $this->content;
-        $this->valuesBinded[':user_id'] = $this->user_id;
     }
 }
 // Don't write any code below this line
