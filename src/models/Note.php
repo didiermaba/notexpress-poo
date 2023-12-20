@@ -29,6 +29,17 @@ class Note extends AbstractModel
         return $this;
     }
 
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug($slug): Note
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
     public function getContent(): string
     {
         return $this->content;
