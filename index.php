@@ -7,6 +7,4 @@ use controllers\Router;
 
 $request = $_SERVER['REQUEST_URI'];
 
-
 Router::route($request);
-

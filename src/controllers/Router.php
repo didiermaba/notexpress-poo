@@ -4,7 +4,13 @@ namespace controllers;
 
 class Router
 {
-    static public function route($request)
+    /**
+     * Method route()
+     * To handle the routing of the application
+     * @param string $request
+     * @return void
+     */
+    static public function route($request): void
     {
         include_once __DIR__ . '/../../views/components/header.php';
         // Routes
@@ -35,5 +41,23 @@ class Router
                 break;
         }
         include_once __DIR__ . '/../../views/components/footer.php';
+    }
+
+    /**
+     * Method handleGetRequest()
+     * To handle GET requests and display the right view with the right data
+     */
+    static public function handleGetRequest()
+    {
+
+    }
+
+    /**
+     * Method handlePostRequest()
+     * To handle POST requests and treat the data sent by the user
+     */
+    static public function handlePostRequest()
+    {
+
     }
 }
