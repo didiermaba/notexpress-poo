@@ -5,6 +5,39 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $request = $_SERVER['REQUEST_URI'];
 
+
+use models\Note; // On charge la classe Note
+
+$note = new Note(); // On instancie un nouvel objet de la classe Note
+
+// On attribue des valeurs aux propriétés de l'objet $note
+$note->setTitle('Symfony le framework PHP')
+    ->setContent('Fabien Potencier remet ça avec la v7')
+    ->setUserId(1)
+    ;
+
+// On prépare la requête SQL
+$note->bindValues();
+
+// On exécute la requête SQL
+$note->create();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 include_once __DIR__ . '/views/components/header.php';
 
 // Routes
