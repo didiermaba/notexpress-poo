@@ -4,10 +4,11 @@ namespace models;
 
 use models\Model;
 
-class Category extends Model
+class Category extends AbstractModel
 {
     private int $id;
     private string $name;
+    protected string $table = 'categories';
 
     /**
      * Get the value of id

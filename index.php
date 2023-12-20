@@ -17,6 +17,7 @@ switch ($request) {
         break;
     case '/notes' :
         require __DIR__ . '/views/notes/all.php';
+        $pageTitle = 'Notes';
         break;
     case '/note' :
         require __DIR__ . '/views/notes/show.php';

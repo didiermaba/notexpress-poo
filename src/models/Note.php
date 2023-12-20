@@ -4,12 +4,13 @@ namespace models;
 
 use models\Model;
 
-class Note extends Model
+class Note extends AbstractModel
 {
     private int $id;
     private string $title;
     private string $content;
     private int $user_id;
+    protected string $table = 'notes';
 
     /**
      * Get the value of id
