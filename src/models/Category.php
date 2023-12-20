@@ -2,13 +2,20 @@
 
 namespace models;
 
-use models\Model;
+use models\AbstractModel;
 
 class Category extends AbstractModel
 {
     private int $id;
     private string $name;
+    protected string $image = ':image';
     protected string $table = 'categories';
+    protected string $fields = 'name';
+    protected string $values = ':name, :image';
+    protected array $valuesBinded = [
+        ':name' => '',
+        ':image' => ''
+    ];
 
     /**
      * Get the value of id
@@ -36,6 +43,18 @@ class Category extends AbstractModel
         $this->name = $name;
 
         return $this;
+    }
+
+     /**
+     * Method bindValues()
+     * To bind values to the query
+     * @param void
+     * @return void
+     */
+    public function bindValues(): void
+    {
+        $this->valuesBinded[':name'] = $this->name;
+        $this->valuesBinded[':image'] = $this->image;
     }
 }
 // Don't write any code below this line

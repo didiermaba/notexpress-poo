@@ -10,8 +10,6 @@ include_once __DIR__ . '/views/components/header.php';
 // Routes
 switch ($request) {
     case '' :
-        require __DIR__ . '/views/home.php';
-        break;
     case '/' :
         require __DIR__ . '/views/home.php';
         break;

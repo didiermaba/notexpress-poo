@@ -10,6 +10,7 @@ abstract class AbstractModel
     protected string $table;
     protected string $fields;
     protected string $values;
+    protected array $valuesBinded;
 
     public function __construct()
     {
@@ -29,7 +30,7 @@ abstract class AbstractModel
         $query = $this->pdo->prepare(
             "INSERT INTO {$this->table} ({$this->fields}) VALUES ({$this->values})"
         );
-        $query->execute();
+        $query->execute($this->valuesBinded);
     }
 
     /**
