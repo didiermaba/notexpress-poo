@@ -20,6 +20,38 @@ abstract class AbstractModel
     // Methods
 
     /**
+     * Method find()
+     * To find an element in the database
+     * @param int $id
+     * @return void
+     */
+    public function find(string $slug): void
+    {
+        $query = $this->pdo->prepare(
+            "SELECT * FROM {$this->table} WHERE slug = '{$slug}'"
+        );
+        $query->execute();
+        $result = $query->fetch();
+        $this->hydrate($result);
+    }
+
+    /**
+     * Method hydrate()
+     * To hydrate the object with the data from the database
+     * @param array $data
+     * @return void
+     */
+    public function hydrate(array $data): void
+    {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if(method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    } 
+
+    /**
      * Method create()
      * To add a new element in the database
      * @param void
