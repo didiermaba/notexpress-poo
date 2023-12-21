@@ -20,6 +20,21 @@ abstract class AbstractModel
     // Methods
 
     /**
+     * Method findAll()
+     * To get all the elements from the database
+     * @param void
+     * @return array
+     */
+    public function findAll(): array
+    {
+        $query = $this->pdo->prepare(
+            "SELECT * FROM {$this->table}"
+        );
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    /**
      * Method find()
      * To find an element in the database
      * @param int $id

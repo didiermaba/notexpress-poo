@@ -1,5 +1,4 @@
-<h1><?= $pageTitle ?></h1>
-
+<h1><?= !empty($pageTitle) ? $pageTitle : '' ?></h1>
 <form action="" method="post">
     <div class="form-group mb-2">
         <label for="title" class="form-label">Titre de la note</label>

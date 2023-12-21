@@ -1,6 +1,1 @@
-<?php 
-$pageTitle = 'Edit note';
-
-?>
-
-<h1><?= $pageTitle ?></h1>
+<h1><?= !empty($pageTitle) ? $pageTitle : '' ?></h1>
