@@ -1,4 +1,7 @@
 <?php 
+
+require_once __DIR__ . "/../../src/controllers/EditNote.php";
+
 $pageTitle = 'Edit note';
 
 ?>

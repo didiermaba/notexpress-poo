@@ -15,7 +15,7 @@ if (isset($_GET['slug'])) {
     $slug = $_GET['slug'];
     $note = $noteModel->find($slug);
     if ($note) {
-        include 'view_note_view.php';
+        include 'show.php';
     } else {
         echo "Note non trouvée.";
     }

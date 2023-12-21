@@ -3,6 +3,8 @@ $pageTitle = 'Add note';
 
 ?>
 
+<a href="/all.php" >Notes</a>
+
 <h1><?= $pageTitle ?></h1>
 
 <form action="" method="post">
