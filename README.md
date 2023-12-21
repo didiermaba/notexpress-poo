@@ -6,7 +6,7 @@ Application de prise de notes, avec une architecture MVC, développée en PHP8 e
 
 ## Models
 
-Dans l'architecture MVC, lorsqu'on fait référence au "model", c'est pour tout ce qui attrait aux données de l'application dans la BDD. Cela concerne également la représentation de ces même données au travers des classes respectives à manipuler.
+Dans l'architecture MVC, lorsqu'on fait référence au "model", c'est pour tout ce qui attrait aux données de l'application dans la BDD. Cela concerne également la représentation de ces mêmes données au travers des classes respectives à manipuler.
 
 On peut dire que MODEL = DATA.
 
@@ -27,10 +27,6 @@ Modèle représentant une catégorie.
 ## Views
 
 Dossier contenant les vues de l'application.
-
-
-
-
 
 On peut dire que VUE = UI.
 
