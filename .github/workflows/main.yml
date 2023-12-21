@@ -1,8 +1,8 @@
 on: push
-name: 🚀 Deploy website on push
+name: 🚀 Deploy app on push
 jobs:
   web-deploy:
-    name: 🎉 Deploy Integration
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
