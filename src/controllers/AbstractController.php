@@ -2,7 +2,6 @@
 
 namespace controllers;
 
-use models\AbstractModel;
 use utilities\Database;
 
 abstract class AbstractController
